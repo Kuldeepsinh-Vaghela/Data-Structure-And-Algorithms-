@@ -26,7 +26,7 @@ Method 2
 ```
 
 ## Question: 2
-### Leetcode Que: 1
+### Leetcode Que 1: Two Sum
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -39,7 +39,7 @@ You can return the answer in any order.
     #for a value 'num' in the list 'nums'
         #find the index value of the 'num' and assign it to 'num_indx' variable
         #subtract 'num' from the 'target' and assign that value to 'lookup_num' variable
-        #ignoring all the elements before 'num' and 'num' itself in the list 'nums', check if the 'lookup_num' variable value is present in the list 'nums'
+        #slice all the elements before 'num' and 'num' itself from the list 'nums' and check if the 'lookup_num' variable value is present in the list 'nums' with remaining variables
         #if yes
             #find the index of the 'lookup_num' variable value in the list 'nums' where all the elements before 'num' and 'num' itself are sliced and assign it to 'lookup_num_index' variable
             #add 'num_indx', 'lookup_num_index' and 1 to get the real index of the 'lookup_num' variable value in list 'nums' 
@@ -49,5 +49,26 @@ You can return the answer in any order.
 ```
 
 ## Question: 3
+### Leetcode Que 26: Remove Duplicates from Sorted Array
+Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
+
+Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
+
+Return k after placing the final result in the first k slots of nums.
+
+Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
+
+```
+
+#Define removeDuplicates(nums)
+    #Initialize 'i' variable to 0
+    #for variable 'j' in the range from 1 to length of list 'nums'
+        #check if the value in list 'nums' at index 'j' and 'j'-1 is the same
+        #if not
+            #increase the value of 'i' by 1
+            #reassign the value at 'i' index in list 'nums' to the value at 'j' index
+    #print out the updated list 'nums'
+
+```
 
 

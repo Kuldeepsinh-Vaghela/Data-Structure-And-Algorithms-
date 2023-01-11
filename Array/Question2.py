@@ -22,6 +22,15 @@ twosum([3,2,3],6)
 # ans = [0,2]
 #  Time Complexity = O(n*2)
 #  Space Complexity = O(1)
+# Method 2
+def two_sum(nums,target):
+    for indx,num in enumerate(nums):
+        lookup_num = target - num
+        if lookup_num in nums[indx+1:]:
+            lookup_num_index = nums[indx+1:].index(lookup_num)
+            print([indx,lookup_num_index + indx + 1])
+two_sum([3,2,3],6)
+
 
 # Use Case:1 
 # nums = [2,7,11,15]
