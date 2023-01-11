@@ -91,7 +91,7 @@ print(newdict)
 # output: {'a': 100, 'b': 100, 'c': 100, 'd': 100, 'e': 100}
 
 ```
-### Get Method
+### `get` Method
 `.get(key,value)`. If the key is present the output will be the corresponding value. If key is not present the output, the value will become default value and it will be returned
 ```python
 
@@ -107,7 +107,7 @@ print(mydict)
 # output: {'a': 0, 'b': 2, 'c': 3, 'd': 4}
 
 ```
-### .items Method
+### `items()` Method
 `.items()`. This function will return a list of all key value pairs in dictionary in the form of tuples
 ```python
 
@@ -187,7 +187,7 @@ print(0 in mydict.values())
 # output: True
 
 ```
-### `for' Function
+### `for` Function
 ```python
 
 mydict = {'a':0,'b':2,'c':3,'d':4}
