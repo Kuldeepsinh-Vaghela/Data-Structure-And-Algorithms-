@@ -135,7 +135,7 @@ print("Values:", mydict.values())
 # output: dict_values([0, 2, 3, 4])
 
 ```
-### Set default Method
+### `Setdefault()` Method
 `setdefault(key,default_value)`.It will return the value of key if the key is present.If the key is not present it will update the dictionary with the assigned key and value
 ```python
 
@@ -152,7 +152,7 @@ print("new updated dict:", mydict)
 # output: {'a': 0, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': None}
 
 ```
-### Update Method
+### `Update()` Method
 `dictionary.update(other_dictionary)` OR `dictionary.update(tuple)`
 ```python
 
@@ -169,7 +169,7 @@ print("updated mydict:", mydict)
 
 ```
 ## Dictionary Functions
-### In function
+### `in` function
 ```python
 
 mydict = {'a':0,'b':2,'c':3,'d':4}
@@ -187,7 +187,7 @@ print(0 in mydict.values())
 # output: True
 
 ```
-### For Function
+### `for' Function
 ```python
 
 mydict = {'a':0,'b':2,'c':3,'d':4}
@@ -199,7 +199,7 @@ for keys in mydict:
 #         4
 
 ```
-### All Function
+### `all()` Function
 It returns true only if all the elements of the iterable are true else false. If the dictioanry is empty it will return true
 ```python
 
@@ -211,7 +211,7 @@ print(all(newdict))
 # output: True
 
 ```
-### Any Function
+### `any()` Function
 This method will return true if any element of the collection is true orelse false. If there is an empty dictionary then it returns false
 ```python
 
@@ -223,7 +223,7 @@ print(any(newdict))
 # output: False
 
 ```
-### Len Function
+### `len()` Function
 It gives the number of key value pairs of dictionary
 ```python
 
@@ -232,7 +232,7 @@ print(len(mydict))
 # output: 4
 
 ```
-### Sorted Function
+### `sorted()` Function
 It sorts the dict according to key
 ```python
 
