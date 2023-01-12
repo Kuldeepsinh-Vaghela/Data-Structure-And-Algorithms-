@@ -119,6 +119,177 @@ You must write an algorithm with O(log n) runtime complexity.
     #print out the value of 'start' variable
 
 ``` 
+## Question: 6
+### Leetcode 66: Plus One
+You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+
+Increment the large integer by one and return the resulting array of digits.
+```
+
+#Define plusOne(digits)
+    #Initialize a variable 'n' to 1
+    #check if the last element of list 'digits' is between numbers 1-8
+    #if yes
+        #increase the value of last element list 'digits' by 1
+        #return the list 'digits'
+    #if no
+        #while variable 'n' is less than or equal to the length of the list 'digits'
+            #check if the 'n'th value from the last of list 'digits' is 9
+            #if yes
+                #check if the length of list 'digits' is 1
+                #if yes
+                    #reassign the last value of list 'digits' to 0
+                    #insert value '1' at the begining of the list 'digits'
+                    #return the list 'digits'
+                #if no
+                    #reassign the value of the 'n'th element from the last of list 'digits' to 0
+                    #increase the value of 'n' variable by 1
+            #if no
+                #increase the value of the 'n'th element from the last of list 'digits' by 1
+                #break the loop
+        #check if the first element of the list 'digits' is zero
+        #if yes
+            #insert a value '1' at the begining of list 'digits'
+        #return the list 'digits'
+
+```
+
+## Question: 7
+### Leetcode 88: Merge Sorted Array
+You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
+The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
+
+```
+
+#Define merge(nums1, m, nums2, n)
+    #reassign the last m elements of list 'nums1' to first 'n' elements of list 'nums2'
+    #sort the elements in list 'nums1'
+    #return the list 'nums1'
+
+```
+
+## Question: 8
+### Leetcode 118: Pascals Triangle
+Given an integer numRows, return the first numRows of Pascal's triangle.
+
+In Pascal's triangle, each number is the sum of the two numbers directly above it
+
+```
+
+#Define generate(numRows)
+    #set variable 'i' to list [1,1]
+    #Initialize a variable 'li' as empty list
+    #check if 'numRows' is equal to 1 
+    #if yes
+        #append a value '[1]' to the empty list 'li'
+        #return list 'li'
+    #else check if 'numRows' is equal to 2
+    #if yes
+        #append a value '[1]' to the empty list 'li'
+        #append 'i' to the empty list 'li'
+        #return list 'li'
+    #if no
+        #append a value '[1]' to the empty list 'li'
+        #append 'i' to the empty list 'li'
+        #reduce the value of 'numRows' by 2
+        #while 'numRows' is greater than 0
+            #initialize a list 'j' to with only one element '1'
+            #initialize a variable 'indx' to 0
+            #while 'indx' is less than 1 less than the value of length of the list 'i'
+                #set a variable 'a' to sumation of value in list 'i' at index 'indx' and 'indx'+1
+                #append the value of 'a' to list 'j'
+                #increase the value of 'indx' by 1
+            #append the value '1' to list 'j'
+            #reassign the value of 'i' to 'j'
+            #decrease the value of 'numRows' by 1
+            #append 'j' to list 'li'
+    #return 'li'
+
+```
+## Question: 9
+### Leetcode 119: Pascal's Triangle II
+Given an integer rowIndex, return the rowIndexth (0-indexed) row of the Pascal's triangle.
+
+In Pascal's triangle, each number is the sum of the two numbers directly above it
+
+```
+
+#Define getRow(rowIndex)
+    #set variable 'i' to list [1,1]
+    #Initialize a variable 'li' as empty list
+    #check if 'rowIndex' is equal to 0
+    #if yes
+        #append a value '[1]' to the empty list 'li'
+        #return the value of list 'li' at index 'rowIndex'
+    #check if 'rowIndex' is equal to 1 
+    #if yes
+        #append a value '[1]' to the empty list 'li'
+        #append 'i' to the empty list 'li'
+        #return the value of list 'li' at index 'rowIndex'
+    #if no
+        #append a value '[1]' to the empty list 'li'
+        #append 'i' to the empty list 'li'
+        #set a new variable 'new_rowIndex' to 'rowIndex'
+        #reduce the value of 'new_rowIndex' by 1
+        #while 'new_rowIndex' is greater than 0
+            #initialize a list 'j' to with only one element '1'
+            #initialize a variable 'indx' to 0
+            #while 'indx' is less than 1 less than the value of length of the list 'i'
+                #set a variable 'a' to sumation of value in list 'i' at index 'indx' and 'indx'+1
+                #append the value of 'a' to list 'j'
+                #increase the value of 'indx' by 1
+            #append the value '1' to list 'j'
+            #reassign the value of 'i' to 'j'
+            #decrease the value of 'new_rowIndex' by 1
+            #append 'j' to list 'li'
+    #return the value of list 'li' at index 'rowIndex'
+
+```
+
+## Question: 10
+### Leetcode 121: Best Time to Buy and Sell Stock
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+```
+
+#Define maxProfit(prices)
+    #set a variable 'min_value_indx' to 0
+    #set a variable 'max_value_indx' to 1
+    #Initialize an empty list 'profit1'
+    #while the value of 'max_value_indx' less than or equal to value 1 less than the length of list 'prices'
+        #set the variable 'min_value' to the value in list 'prices' at index 'min_value_indx'
+        #set the variable 'max_value' to the value in list 'prices' at index 'max_value_indx'
+        #check if 'min_value' is greater than 'max_value'
+        #if yes
+            #increase the value of 'min_value_indx' by 1
+            #set 'max_value_indx' to 'min_value_indx' + 1
+        #else check if 'min_value' is equal than 'max_value'
+            #increase the value of 'min_value_indx' by 1
+            #set 'max_value_indx' to 'min_value_indx' + 1
+        #if no
+            #initialize a variable 'profit2' to a value obtained by subtracting 'min_value' from 'max_value'
+            #append the value of 'profit2' to 'profit1'
+            #increase the value of 'max_value_indx'  by 1
+    #check if list 'profit1' is empty
+    #if yes
+        #return 0
+    #if no
+        #return the max value in list 'profit1'
+
+```
+
+
+
+
+
+
 
 
 
