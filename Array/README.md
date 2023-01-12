@@ -1,283 +1,297 @@
-# Array theory
+# Array Questions
+## Question: 1
+Find the missing number in an integer array of 1 to 100
 
-## Creating a 1-D Array
-```python
-
-x = np.array([1,2,3])
-print(x,x.shape)
-# output: [1 2 3] (3,)
 
 ```
-## Creating a 2-D Array
-```python
-
-y = np.array([[1,2,3],[4,5,6]])
-print(y,y.shape)
-# output: [[1 2 3]
-#          [4 5 6]] (2, 3)
-
-```
-## Creating a 3-D Array
-```python
-
-z = np.array([[[1,2,3],[4,5,6]],[[7,8,9],[10,11,12]]])
-print(z,z.shape)
-# output: [[[ 1  2  3]
-#            [ 4  5  6]]
-#
-#            [[ 7  8  9]
-#             [10 11 12]]] (2, 2, 3)
-
-```
-## 1-D Arrays
-### Insertion
-#### Inserting a value in the end in 1-D array
-```python
-
-x = np.array([1,2,3])
-x = np.insert(x,3,4) # x = array name, 3 = index value, 4 = value which you want to add 
-print(x)
-# output: [1 2 3 4]
-
-```
-#### Inserting a value in the beginning in 1-D array
-```python
-
-x = np.array([1,2,3])
-x = np.insert(x,0,0)
-print(x)
-# output: 
-## Updating an element in a dictionary
-```python
-mydict['a'] = 0
+Method 1
+#Define missing_value(list_of_integers,n)
+    #Initialize 'nmbr' variable to 1
+    #While 'nmbr' is less then the number 'n' 
+        #check if the value of the variable 'nmbr' is present in the 'list_of_integers'
+        #if no
+            #print out the value of the variable 'nmbr'
+            #increase the value of 'nmbr' variable by 1
+        #if yes
+            #increase the value of 'nmbr' variable by 1
 ```
 
-## Deleting an element from dictionary
-
-### Method:1
-#### pop()
-In this method we have to give the key as input and it will delete the key and value pair from the dictionary and return the value
-```python
-
-mydict = {'a':0,'b':2,'c':3,'d':4}
-print(mydict.pop('a'))
-# output: 0
-print(mydict)
-# output: {'b': 2, 'c': 3, 'd': 4}
+```
+Method 2
+#Define msng_value(list_of_int,n)
+    #Initialize 'sum_of_n_int' variable to the formula for sum of n natural numbers
+    #Initialize 'sum_of_int_in_list' variable to the sum of the elements in the 'list_of_int'
+    #Subtract the value of 'sum_of_int_in_list' variable from 'sum_of_n_int' variable and print it out 
 
 ```
-### Method:2
-#### popitem()
-This method will delete arbitary items, both key and value and returns both the values
-```python
 
-mydict = {'a':0,'b':2,'c':3,'d':4}
-print(mydict.popitem())
-# output: ('d', 4)
-print(mydict)
-# output: {'a': 0, 'b': 2, 'c': 3}
+## Question: 2
+### Leetcode Que 1: Two Sum
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
 
 ```
-### Method:3
-#### Clear()
-This method will delete whole dictionary
-```python
 
-mydict = {'a':0,'b':2,'c':3,'d':4}
-mydict.clear()
-print(mydict)
-# output: {}
-
-```
-### Method:4
-#### del
-With this method we need to input value of key and the key value pair will be deleted
-```python
-
-mydict = {'a':0,'b':2,'c':3,'d':4}
-# The way we write this function is different then other 3 functions
-del mydict['a']
-print(mydict)
-# output: {'b': 2, 'c': 3, 'd': 4}
-# we can delete whole dictiionary using this function
-del mydict
+#Define twosum(nums,target)
+    #for a value 'num' in the list 'nums'
+        #find the index value of the 'num' and assign it to 'num_indx' variable
+        #subtract 'num' from the 'target' and assign that value to 'lookup_num' variable
+        #slice all the elements before 'num' and 'num' itself from the list 'nums' and check if the 'lookup_num' variable value is present in the list 'nums' with remaining variables
+        #if yes
+            #find the index of the 'lookup_num' variable value in the list 'nums' where all the elements before 'num' and 'num' itself are sliced and assign it to 'lookup_num_index' variable
+            #add 'num_indx', 'lookup_num_index' and 1 to get the real index of the 'lookup_num' variable value in list 'nums' 
+            #print out 'num_indx' variable and the real index of the 'lookup_num' variable value in list 'nums' 
+            #break the loop
 
 ```
-## Dictionary Methods
-### Copying the Dictionary
-`.copy()` is used to copy a dict into new dict and we can then use new dict without updating old one
-```python
 
-mydict = {'a':0,'b':2,'c':3,'d':4}
-newdict = mydict.copy()
-newdict['e'] = 5
-print("original dictionary:", mydict)
-# output: {'a': 0, 'b': 2, 'c': 3, 'd': 4}
-print("copied updated dictionary:", newdict)
-# output: {'a': 0, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+## Question: 3
+### Leetcode Que 26: Remove Duplicates from Sorted Array
+Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
+
+Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
+
+Return k after placing the final result in the first k slots of nums.
+
+Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
 
 ```
-### Creating a Dictionary from keys
-`fromkeys` method is used for that. In input it will take a sequence, which will be keys, and a value dictionary.`fromkeys(sequence,value)`
-```python
 
-keys = ['a','b','c','d','e']
-value = 100
-newdict = {}.fromkeys(keys,value)
-print(newdict)
-# output: {'a': 100, 'b': 100, 'c': 100, 'd': 100, 'e': 100}
-
-```
-### `get` Method
-`.get(key,value)`. If the key is present the output will be the corresponding value. If key is not present the output, the value will become default value and it will be returned
-```python
-
-mydict = {'a':0,'b':2,'c':3,'d':4}
-print("value corresponding to the key 'a' in dict:", mydict.get('a',100))
-# output: 0
-print("output when key is not present but default value is specified '100':", mydict.get('r',100))
-# output: 100
-print("output when key is not present and default value is not specified:", mydict.get('r'))
-# output: None
-# value in mydict is not updated 
-print(mydict)
-# output: {'a': 0, 'b': 2, 'c': 3, 'd': 4}
+#Define removeDuplicates(nums)
+    #Initialize 'i' variable to 0
+    #for variable 'j' in the range from 1 to length of list 'nums'
+        #check if the value in list 'nums' at index 'j' and 'j'-1 is the same
+        #if not
+            #increase the value of 'i' by 1
+            #reassign the value at 'i' index in list 'nums' to the value at 'j' index
+    #print out the updated list 'nums'
 
 ```
-### `items()` Method
-`.items()`. This function will return a list of all key value pairs in dictionary in the form of tuples
-```python
 
-mydict = {'a':0,'b':2,'c':3,'d':4}
-print(mydict.items())
-# output: dict_items([('a', 0), ('b', 2), ('c', 3), ('d', 4)])
+## Question: 4
+### Leetcode 27: Remove Element
+Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
 
-```
-### Get Keys and Values Method
-`.keys()`. To get a list of all the keys
-```python 
+Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
 
-mydict = {'a':0,'b':2,'c':3,'d':4}
-print("Dictionary:", mydict)
-# output: {'a': 0, 'b': 2, 'c': 3, 'd': 4}
-print("Keys:", mydict.keys())
-# output: dict_keys(['a', 'b', 'c', 'd'])
+Return k after placing the final result in the first k slots of nums.
+
+Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
 
 ```
-`.values()`. To get a list of all the values
-```python
 
-mydict = {'a':0,'b':2,'c':3,'d':4}
-print("Values:", mydict.values())
-# output: dict_values([0, 2, 3, 4])
-
-```
-### `Setdefault()` Method
-`setdefault(key,default_value)`.It will return the value of key if the key is present.If the key is not present it will update the dictionary with the assigned key and value
-```python
-
-mydict = {'a':0,'b':2,'c':3,'d':4}
-print("Value of the key 'a':",mydict.setdefault('a',5))
-# output: 0
-print("Added key 'e' and returned its value '5':", mydict.setdefault('e',5))
-# output: 5
-print("Updated dictionary:", mydict)
-# output: {'a': 0, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
-print("Added key 'f' and returned none as its value is not specified:", mydict.setdefault('f'))
-# output: None
-print("new updated dict:", mydict)
-# output: {'a': 0, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': None}
+# Define removeElement(nums, val)
+    #Initialize a variable 'j' to 0
+    #for a variable 'i' in range 1 to the length of list 'nums'
+        #check if the value in list 'nums' at index 'i' is same as 'val'
+        #if not
+            #reassign the value in list at index 'j' to the value at index 'i'
+            #increase the value of 'j' by 1
+    #print out the list 'nums'
 
 ```
-### `Update()` Method
-`dictionary.update(other_dictionary)` OR `dictionary.update(tuple)`
-```python
 
-mydict = {'a':0,'b':2,'c':3,'d':4}
-newdict = {'e':5,'f':6,'g':7,'h':8}
-tuple_values = (('i',9),('j',10),('k',11),('l',12))
-mydict.update(newdict)
-print("updated mydict:", mydict)
-# output: {'a': 0, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8}
-# OR
-mydict.update(tuple_values)
-print("updated mydict:", mydict)
-# output: {'a': 0, 'b': 2, 'c': 3, 'd': 4, 'i': 9, 'j': 10, 'k': 11, 'l': 12}
+## Question: 5
+### Leetcode 35: Search Insert Position
+Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You must write an algorithm with O(log n) runtime complexity.
 
 ```
-## Dictionary Functions
-### `in` function
-```python
 
-mydict = {'a':0,'b':2,'c':3,'d':4}
-k = 'a'
-if k in mydict:
-    print("yes")
-# output: yes
-# IN operator only reads keys and not values
-l = 0
-if l in mydict:
-    print("no")
-# no output
-# To check value we need to call .values()
-print(0 in mydict.values())
-# output: True
+#Define searchInsert(nums, target)
+    #Initialize a variable 'start' to 0
+    #set the variable 'end' to the index value of the last element of list 'nums'
+    #while 'start' is less than or equal to 'end'
+        #set the variable 'mid' to the quotient value obtained after dividing sum of 'start' and 'end' by 2
+        #check if the value in list 'nums' at index 'mid' is equal to 'target'
+        #if yes
+            #return mid
+        #else check if the value in list 'nums' at index 'mid' is greater than 'target'
+        #if yes
+            #reassign the value of 'end' to 'mid'-1
+        #check if the value in list 'nums' at index 'mid' is less than to 'target'
+        #if yes
+            #reassign the value of 'start' to 'mid'+1
+    #print out the value of 'start' variable
+
+``` 
+## Question: 6
+### Leetcode 66: Plus One
+You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+
+Increment the large integer by one and return the resulting array of digits.
+```
+
+#Define plusOne(digits)
+    #Initialize a variable 'n' to 1
+    #check if the last element of list 'digits' is between numbers 1-8
+    #if yes
+        #increase the value of last element list 'digits' by 1
+        #return the list 'digits'
+    #if no
+        #while variable 'n' is less than or equal to the length of the list 'digits'
+            #check if the 'n'th value from the last of list 'digits' is 9
+            #if yes
+                #check if the length of list 'digits' is 1
+                #if yes
+                    #reassign the last value of list 'digits' to 0
+                    #insert value '1' at the begining of the list 'digits'
+                    #return the list 'digits'
+                #if no
+                    #reassign the value of the 'n'th element from the last of list 'digits' to 0
+                    #increase the value of 'n' variable by 1
+            #if no
+                #increase the value of the 'n'th element from the last of list 'digits' by 1
+                #break the loop
+        #check if the first element of the list 'digits' is zero
+        #if yes
+            #insert a value '1' at the begining of list 'digits'
+        #return the list 'digits'
 
 ```
-### `for` Function
-```python
 
-mydict = {'a':0,'b':2,'c':3,'d':4}
-for keys in mydict:
-    print(mydict[keys])
-# output: 0
-#         2
-#         3
-#         4
+## Question: 7
+### Leetcode 88: Merge Sorted Array
+You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, representing the number of elements in nums1 and nums2 respectively.
+
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
+The final sorted array should not be returned by the function, but instead be stored inside the array nums1. To accommodate this, nums1 has a length of m + n, where the first m elements denote the elements that should be merged, and the last n elements are set to 0 and should be ignored. nums2 has a length of n.
 
 ```
-### `all()` Function
-It returns true only if all the elements of the iterable are true else false. If the dictioanry is empty it will return true
-```python
 
-mydict = {'1':True,'2':True}
-print(all(mydict))
-# output: True
-newdict = {}
-print(all(newdict))
-# output: True
+#Define merge(nums1, m, nums2, n)
+    #reassign the last m elements of list 'nums1' to first 'n' elements of list 'nums2'
+    #sort the elements in list 'nums1'
+    #return the list 'nums1'
 
 ```
-### `any()` Function
-This method will return true if any element of the collection is true orelse false. If there is an empty dictionary then it returns false
-```python
 
-mydict = {'1':True,'2':False}
-print(any(mydict))
-# output: True
-newdict = {}
-print(any(newdict))
-# output: False
+## Question: 8
+### Leetcode 118: Pascals Triangle
+Given an integer numRows, return the first numRows of Pascal's triangle.
+
+In Pascal's triangle, each number is the sum of the two numbers directly above it
 
 ```
-### `len()` Function
-It gives the number of key value pairs of dictionary
-```python
 
-mydict = {'a':0,'b':2,'c':3,'d':4}
-print(len(mydict))
-# output: 4
+#Define generate(numRows)
+    #set variable 'i' to list [1,1]
+    #Initialize a variable 'li' as empty list
+    #check if 'numRows' is equal to 1 
+    #if yes
+        #append a value '[1]' to the empty list 'li'
+        #return list 'li'
+    #else check if 'numRows' is equal to 2
+    #if yes
+        #append a value '[1]' to the empty list 'li'
+        #append 'i' to the empty list 'li'
+        #return list 'li'
+    #if no
+        #append a value '[1]' to the empty list 'li'
+        #append 'i' to the empty list 'li'
+        #reduce the value of 'numRows' by 2
+        #while 'numRows' is greater than 0
+            #initialize a list 'j' to with only one element '1'
+            #initialize a variable 'indx' to 0
+            #while 'indx' is less than 1 less than the value of length of the list 'i'
+                #set a variable 'a' to sumation of value in list 'i' at index 'indx' and 'indx'+1
+                #append the value of 'a' to list 'j'
+                #increase the value of 'indx' by 1
+            #append the value '1' to list 'j'
+            #reassign the value of 'i' to 'j'
+            #decrease the value of 'numRows' by 1
+            #append 'j' to list 'li'
+    #return 'li'
 
 ```
-### `sorted()` Function
-It sorts the dict according to key
-```python
+## Question: 9
+### Leetcode 119: Pascal's Triangle II
+Given an integer rowIndex, return the rowIndexth (0-indexed) row of the Pascal's triangle.
 
-mydict = {'d':5,'e':2,'a':0,'b':4}
-print(sorted(mydict))
-# output: ['a', 'b', 'd', 'e']
-newdict = {'buubuininijijd':5,'afae':2,'wfwwa':0,'bfefawf':4}
-print(sorted(newdict,key=len)) # it will sort based on the length of the key
-# output: ['afae', 'wfwwa', 'bfefawf', 'buubuininijijd']
+In Pascal's triangle, each number is the sum of the two numbers directly above it
 
 ```
+
+#Define getRow(rowIndex)
+    #set variable 'i' to list [1,1]
+    #Initialize a variable 'li' as empty list
+    #check if 'rowIndex' is equal to 0
+    #if yes
+        #append a value '[1]' to the empty list 'li'
+        #return the value of list 'li' at index 'rowIndex'
+    #check if 'rowIndex' is equal to 1 
+    #if yes
+        #append a value '[1]' to the empty list 'li'
+        #append 'i' to the empty list 'li'
+        #return the value of list 'li' at index 'rowIndex'
+    #if no
+        #append a value '[1]' to the empty list 'li'
+        #append 'i' to the empty list 'li'
+        #set a new variable 'new_rowIndex' to 'rowIndex'
+        #reduce the value of 'new_rowIndex' by 1
+        #while 'new_rowIndex' is greater than 0
+            #initialize a list 'j' to with only one element '1'
+            #initialize a variable 'indx' to 0
+            #while 'indx' is less than 1 less than the value of length of the list 'i'
+                #set a variable 'a' to sumation of value in list 'i' at index 'indx' and 'indx'+1
+                #append the value of 'a' to list 'j'
+                #increase the value of 'indx' by 1
+            #append the value '1' to list 'j'
+            #reassign the value of 'i' to 'j'
+            #decrease the value of 'new_rowIndex' by 1
+            #append 'j' to list 'li'
+    #return the value of list 'li' at index 'rowIndex'
+
+```
+
+## Question: 10
+### Leetcode 121: Best Time to Buy and Sell Stock
+You are given an array prices where prices[i] is the price of a given stock on the ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
+
+```
+
+#Define maxProfit(prices)
+    #set a variable 'min_value_indx' to 0
+    #set a variable 'max_value_indx' to 1
+    #Initialize an empty list 'profit1'
+    #while the value of 'max_value_indx' less than or equal to value 1 less than the length of list 'prices'
+        #set the variable 'min_value' to the value in list 'prices' at index 'min_value_indx'
+        #set the variable 'max_value' to the value in list 'prices' at index 'max_value_indx'
+        #check if 'min_value' is greater than 'max_value'
+        #if yes
+            #increase the value of 'min_value_indx' by 1
+            #set 'max_value_indx' to 'min_value_indx' + 1
+        #else check if 'min_value' is equal than 'max_value'
+            #increase the value of 'min_value_indx' by 1
+            #set 'max_value_indx' to 'min_value_indx' + 1
+        #if no
+            #initialize a variable 'profit2' to a value obtained by subtracting 'min_value' from 'max_value'
+            #append the value of 'profit2' to 'profit1'
+            #increase the value of 'max_value_indx'  by 1
+    #check if list 'profit1' is empty
+    #if yes
+        #return 0
+    #if no
+        #return the max value in list 'profit1'
+
+```
+
+
+
+
+
+
+
+
+
+
+
