@@ -11,8 +11,9 @@ def removeDuplicates(nums):
 # Use Case: 1
 # nums = [1,1,2]
 # output = [1,2]
+# expected = [1,2]
 
 # Use Case: 2
 # nums = [0,0,1,1,1,2,2,3,3,4]
 # output = [0,1,2,3,4]
-
+# expected = [0,1,2,3,4]

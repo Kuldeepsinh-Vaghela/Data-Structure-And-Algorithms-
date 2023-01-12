@@ -36,14 +36,17 @@ two_sum([3,2,3],6)
 # nums = [2,7,11,15]
 # target = 9
 # output = [0,1]
+# expected = [0,1]
 
 # Use Case:2
 # nums = [3,2,4]
 # target = 6
 # output = [1,2]
+# expected = [1,2]
 
 # Use Case:3
 # nums = [3,3]
 # target = 6 
 # output = [0,1]
+# expected = [0,1]
   

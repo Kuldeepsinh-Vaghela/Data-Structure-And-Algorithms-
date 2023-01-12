@@ -71,4 +71,56 @@ Do not allocate extra space for another array. You must do this by modifying the
 
 ```
 
+## Question: 4
+### Leetcode 27: Remove Element
+Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
+
+Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the first part of the array nums. More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result. It does not matter what you leave beyond the first k elements.
+
+Return k after placing the final result in the first k slots of nums.
+
+Do not allocate extra space for another array. You must do this by modifying the input array in-place with O(1) extra memory.
+
+```
+
+# Define removeElement(nums, val)
+    #Initialize a variable 'j' to 0
+    #for a variable 'i' in range 1 to the length of list 'nums'
+        #check if the value in list 'nums' at index 'i' is same as 'val'
+        #if not
+            #reassign the value in list at index 'j' to the value at index 'i'
+            #increase the value of 'j' by 1
+    #print out the list 'nums'
+
+```
+
+## Question: 5
+### Leetcode 35: Search Insert Position
+Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.
+
+You must write an algorithm with O(log n) runtime complexity.
+
+```
+
+#Define searchInsert(nums, target)
+    #Initialize a variable 'start' to 0
+    #set the variable 'end' to the index value of the last element of list 'nums'
+    #while 'start' is less than or equal to 'end'
+        #set the variable 'mid' to the quotient value obtained after dividing sum of 'start' and 'end' by 2
+        #check if the value in list 'nums' at index 'mid' is equal to 'target'
+        #if yes
+            #return mid
+        #else check if the value in list 'nums' at index 'mid' is greater than 'target'
+        #if yes
+            #reassign the value of 'end' to 'mid'-1
+        #check if the value in list 'nums' at index 'mid' is less than to 'target'
+        #if yes
+            #reassign the value of 'start' to 'mid'+1
+    #print out the value of 'start' variable
+
+``` 
+
+
+
+
 
