@@ -282,7 +282,23 @@ Return the maximum profit you can achieve from this transaction. If you cannot a
         #return 0
     #if no
         #return the max value in list 'profit1'
+```
 
+## Question: 11
+### Leetcode 2460: Apply Operations to an Array 
+You are given a 0-indexed array nums of size n consisting of non-negative integers.
+
+You need to apply n - 1 operations to this array where, in the ith operation (0-indexed), you will apply the following on the ith element of nums:
+
+If nums[i] == nums[i + 1], then multiply nums[i] by 2 and set nums[i + 1] to 0. Otherwise, you skip this operation.
+After performing all the operations, shift all the 0's to the end of the array.
+
+For example, the array [1,0,2,0,0,1] after shifting all its 0's to the end, is [1,2,1,0,0,0].
+Return the resulting array.
+
+```
+First loop to check if nums[x] = nums[x+1] and if yes then replace value at index x with 0
+second loop for checking if the value in list is 0 and if yes then removing that element and then appending it at the end
 ```
 
 
