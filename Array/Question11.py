@@ -1,4 +1,4 @@
-# Question 10
+# Question 11
 ## LeetCode Question 2460
 ### You are given a 0-indexed array nums of size n consisting of non-negative integers.
 ### You need to apply n - 1 operations to this array where, in the ith operation (0-indexed), 
