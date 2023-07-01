@@ -318,6 +318,8 @@ and return false if every element is distinct.
         #else Increase both pointer value by 1
     #if all the elements are unique then return false at the end
 
+```
+
 
 
 
