@@ -301,6 +301,22 @@ First loop to check if nums[x] = nums[x+1] and if yes then replace value at inde
 second loop for checking if the value in list is 0 and if yes then removing that element and then appending it at the end
 ```
 
+## Question: 12
+### Leetcode 217: Contains Duplicate
+
+Given an integer array nums, return true if any value appears at least twice in the array,
+and return false if every element is distinct.
+
+```
+#Define the function:
+    #sort the given array
+    #Initialize pointer 1 to oth position
+    #Intitialize pointer 2 to 1st position
+    #loop till pointer 2 is at the last element
+        #check if the value at pointer 1 is equal to the value at pointer 2
+            #If yes return True
+        #else Increase both pointer value by 1
+    #if all the elements are unique then return false at the end
 
 
 
