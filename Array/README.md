@@ -319,7 +319,21 @@ and return false if every element is distinct.
     #if all the elements are unique then return false at the end
 
 ```
+## Question: 13
+### Leetcode 242: Valid Anagram
 
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+typically using all the original letters exactly once.
+
+```
+#Define the function:
+    #sort string s
+    #sort string t
+    #return true if sorted string s is equal to sorted string t
+    #or else return False
+
+```
 
 
 
