@@ -335,6 +335,62 @@ typically using all the original letters exactly once.
 
 ```
 
+# 🧠 Single Number
+
+**LeetCode Problem:** [Single Number](https://leetcode.com/problems/single-number/description/?envType=problem-list-v2&envId=array)
+
+---
+
+## 📘 Problem Description
+
+You are given a **non-empty** array of integers `nums`, where every element appears **twice** except for **one**. Find and return the element that appears only **once**.
+
+### Constraints:
+- Each input will have exactly one element that appears once.
+- All others appear exactly twice.
+- Time complexity requirement: O(n)
+- Space complexity: Can vary based on approach.
+
+---
+
+## 🧾 Example Input & Output
+
+### Example 1:
+**Input:**  
+`nums = [2, 2, 1]`  
+**Output:**  
+`1`
+
+### Example 2:
+**Input:**  
+`nums = [4, 1, 2, 1, 2]`  
+**Output:**  
+`4`
+
+---
+
+## ✅ Python Solution with Comments
+
+```python
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        # Initialize a dictionary to count occurrences of each number
+        ans_dict = {}
+
+        # Iterate over each number in the list
+        for num in nums:
+            # If number is already in dictionary, increment its count
+            if num in ans_dict:
+                ans_dict[num] += 1
+            # If it's not in the dictionary, initialize its count to 1
+            else:
+                ans_dict[num] = 1
+
+        # The number with the minimum count (which will be 1) is the single number
+        ans = min(ans_dict, key=ans_dict.get)
+
+        return ans
+
 
 
 
