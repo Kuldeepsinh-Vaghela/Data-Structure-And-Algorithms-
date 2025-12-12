@@ -4,7 +4,7 @@ class Solution:
         str_int = str(n)
         
         new_n = 0
-        ref_list = []
+        ref_set = ()
         while new_n != 1:
             sum_sq = 0
             for dgt in str_int:
@@ -12,9 +12,9 @@ class Solution:
                 sum_sq += intv**2
             str_int = str(sum_sq)
             new_n = sum_sq
-            if new_n in ref_list:
+            if new_n in ref_set:
                 return False
             else:
-                ref_list.append(new_n)
+                ref_set.add(new_n)
         return True
             
